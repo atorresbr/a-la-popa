@@ -29,6 +29,10 @@ sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && \
 sudo rm -rf ~/.local/share/openspades* 2> /dev/null && \
 sudo rm -rf /usr/local/games/openspades 2> /dev/null && \
 
+rm -rf ~/.cache/icon-cache.kcache
+rm -rf ~/.cache/thumbnails/*
+rm -rf ~/.cache/icons/*
+
 ## downloading the text file to transform in Bash Script
 wget https://raw.githubusercontent.com/atorresbr/a-la-popa/main/a-la-popa.txt && \
 sudo mv a-la-popa.txt a-la-popa.sh && \
