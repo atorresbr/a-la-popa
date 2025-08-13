@@ -65,4 +65,4 @@ export XDG_CURRENT_DESKTOP=Unity
 export XLOCALEDIR="$SNAP/usr/share/X11/locale"
 export LOCPATH="$SNAP/usr/lib/locale"
 
-$SNAP/games/openspades "$@"
+$SNAP/games/sopaspades "$@"
