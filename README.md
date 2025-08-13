@@ -29,6 +29,10 @@ sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null &&
 sudo rm -rf ~/.local/share/openspades* 2> /dev/null &&
 sudo rm -rf /usr/local/games/openspades 2> /dev/null &&
 
+## removing game folders from the old sopaspades version
+sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null &&
+sudo rm -rf /usr/local/games/sopaspades 2> /dev/null &&
+
 
 ## sudo rm -rf ~/.cache/icon-cache.kcache 
 
@@ -49,7 +53,7 @@ sudo mv a-la-popa.txt a-la-popa.sh && \
 sudo chmod +x a-la-popa.sh && sudo ./a-la-popa.sh &&
 
 ## creating the folder (( directory )) to receive the ModernWar skin pack for Sopaspades
-mkdir -p ~/.local/share/openspades/Resources && cd ~/.local/share/openspades/Resources &&
+mkdir -p ~/.local/share/sopaspades/Resources && cd ~/.local/share/sopaspades/Resources &&
 
 ## downloading the pack
 wget https://github.com/atorresbr/a-la-popa/raw/main/MODERN-PACK/modern_pack.zip && 
