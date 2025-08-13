@@ -19,6 +19,7 @@
 
  */
 
+#include <SopaSpades.h>
 #include <math.h>
 #include <string.h>
 #include <vector>
