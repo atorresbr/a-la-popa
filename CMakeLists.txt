@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 2.8)
-project(OpenSpades)
+project(SopaSpades)
 
-set(OpenSpades_VERSION_MAJOR 0)
-set(OpenSpades_VERSION_MINOR 1)
-set(OpenSpades_VERSION_REVISION 3)
+set(SopaSpades_VERSION_MAJOR 0)
+set(SopaSpades_VERSION_MINOR 1)
+set(SopaSpades_VERSION_REVISION 3)
 
-set(OPENSPADES_FULL_VERSION "${OpenSpades_VERSION_MAJOR}.${OpenSpades_VERSION_MINOR}.${OpenSpades_VERSION_REVISION}")
+set(SOPASPADES_FULL_VERSION "${SopaSpades_VERSION_MAJOR}.${SopaSpades_VERSION_MINOR}.${SopaSpades_VERSION_REVISION}")
 
 set(OS_BASE_DIR ${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -151,23 +151,23 @@ if(HAS_SOCKLEN_T)
     add_definitions(-DHAS_SOCKLEN_T=1)
 endif()
 
-option(OPENSPADES_RESOURCES "NO_OPENSPADES_RESOURCES" ON)
+option(SOPASPADES_RESOURCES "NO_SOPASPADES_RESOURCES" ON)
 
 # note that all paths are without trailing slash
-set(OPENSPADES_INSTALL_DOC       "share/doc/openspades" CACHE STRING "Directory for installing documentation. ")
-set(OPENSPADES_INSTALL_MENU      "share/menu"           CACHE STRING "Directory for installing menu file. " )
-set(OPENSPADES_INSTALL_MAN       "share/man/man6"       CACHE STRING "Directory for installing man file. " )
-set(OPENSPADES_INSTALL_RESOURCES "share/games/openspades/Resources" CACHE STRING "Directory for installing Resources. ")
-set(OPENSPADES_INSTALL_ICONS     "share/icons/hicolor"  CACHE STRING "Directory for installing icons. ")
-set(OPENSPADES_INSTALL_PIXMAP    "share/pixmaps"        CACHE STRING "Directory for installing .xpm icon. ")
-set(OPENSPADES_INSTALL_BINARY    "games"                CACHE STRING "Directory for installing result binary executable. ")
-set(OPENSPADES_INSTALL_DESKTOP   "share/applications"   CACHE STRING "Directory for installing .desktop file. ")
-set(OPENSPADES_INSTALL_LIBS      "lib/openspades"       CACHE STRING "Directory for installing various non-media stuff. Currently not used")
+set(SOPASPADES_INSTALL_DOC       "share/doc/sopaspades" CACHE STRING "Directory for installing documentation. ")
+set(SOPASPADES_INSTALL_MENU      "share/menu"           CACHE STRING "Directory for installing menu file. " )
+set(SOPASPADES_INSTALL_MAN       "share/man/man6"       CACHE STRING "Directory for installing man file. " )
+set(SOPASPADES_INSTALL_RESOURCES "share/games/sopaspades/Resources" CACHE STRING "Directory for installing Resources. ")
+set(SOPASPADES_INSTALL_ICONS     "share/icons/hicolor"  CACHE STRING "Directory for installing icons. ")
+set(SOPASPADES_INSTALL_PIXMAP    "share/pixmaps"        CACHE STRING "Directory for installing .xpm icon. ")
+set(SOPASPADES_INSTALL_BINARY    "games"                CACHE STRING "Directory for installing result binary executable. ")
+set(SOPASPADES_INSTALL_DESKTOP   "share/applications"   CACHE STRING "Directory for installing .desktop file. ")
+set(SOPASPADES_INSTALL_LIBS      "lib/sopaspades"       CACHE STRING "Directory for installing various non-media stuff. Currently not used")
 
-set(OPENSPADES_RESDIR "" CACHE STRING "Resource dir to use while developing")
-set(OPENSPADES_EXTRATITLE "" CACHE STRING "Extra info to add to the package name")
-if(OPENSPADES_RESDIR)
-	set(RESDIR ${OPENSPADES_RESDIR})
+set(SOPASPADES_RESDIR "" CACHE STRING "Resource dir to use while developing")
+set(SOPASPADES_EXTRATITLE "" CACHE STRING "Extra info to add to the package name")
+if(SOPASPADES_RESDIR)
+	set(RESDIR ${SOPASPADES_RESDIR})
 	set(RESDIR_DEFINED TRUE)
 	mark_as_advanced(RESDIR)
 	mark_as_advanced(RESDIR_DEFINED)
@@ -185,12 +185,12 @@ if(CMAKE_CXX_COMPILER_ID)
 	else()
 		set(_version "")
 	endif()
-	set(OPENSPADES_COMPILER ${CMAKE_CXX_COMPILER_ID}${_version})
+	set(SOPASPADES_COMPILER ${CMAKE_CXX_COMPILER_ID}${_version})
 endif()
 
 
-configure_file("${PROJECT_SOURCE_DIR}/OpenSpades.h.in" "${PROJECT_BINARY_DIR}/OpenSpades.h")
-configure_file("${PROJECT_SOURCE_DIR}/OpenSpades.rc.in" "${PROJECT_BINARY_DIR}/OpenSpades.rc")
+configure_file("${PROJECT_SOURCE_DIR}/SopaSpades.h.in" "${PROJECT_BINARY_DIR}/SopaSpades.h")
+configure_file("${PROJECT_SOURCE_DIR}/SopaSpades.rc.in" "${PROJECT_BINARY_DIR}/SopaSpades.rc")
 include_directories(BEFORE "${PROJECT_BINARY_DIR}")
 include_directories("${SDL2_INCLUDE_DIR}")
 include_directories("${SDL2_IMAGE_INCLUDE_DIR}")
@@ -209,21 +209,21 @@ add_subdirectory(Sources)
 
 if(UNIX AND NOT APPLE)
 	# various texts
-	INSTALL(FILES AUTHORS LICENSE README.md DESTINATION ${OPENSPADES_INSTALL_DOC}/)
+	INSTALL(FILES AUTHORS LICENSE README.md DESTINATION ${SOPASPADES_INSTALL_DOC}/)
 
 	# menu file
-	INSTALL(FILES Resources/Unix/Menu/openspades DESTINATION ${OPENSPADES_INSTALL_MENU}/)
+	INSTALL(FILES Resources/Unix/Menu/sopaspades DESTINATION ${SOPASPADES_INSTALL_MENU}/)
 
 	# man file
-	INSTALL(FILES ${CMAKE_BINARY_DIR}/Resources/Unix/Man/openspades.6.gz DESTINATION ${OPENSPADES_INSTALL_MAN}/)
+	INSTALL(FILES ${CMAKE_BINARY_DIR}/Resources/Unix/Man/sopaspades.6.gz DESTINATION ${SOPASPADES_INSTALL_MAN}/)
 
 	# changelog file
-	INSTALL(FILES ${CMAKE_BINARY_DIR}/Resources/Unix/Debian/changelog.gz DESTINATION ${OPENSPADES_INSTALL_DOC}/)
+	INSTALL(FILES ${CMAKE_BINARY_DIR}/Resources/Unix/Debian/changelog.gz DESTINATION ${SOPASPADES_INSTALL_DOC}/)
 
 	# copyright file
-	INSTALL(FILES ${CMAKE_BINARY_DIR}/Resources/Unix/Debian/copyright DESTINATION ${OPENSPADES_INSTALL_DOC}/)
+	INSTALL(FILES ${CMAKE_BINARY_DIR}/Resources/Unix/Debian/copyright DESTINATION ${SOPASPADES_INSTALL_DOC}/)
 
-	if(OPENSPADES_RESOURCES)
+	if(SOPASPADES_RESOURCES)
 		# install asset paks (including non-GPL one)
 		install(FILES
 			${CMAKE_BINARY_DIR}/Resources/pak000-Nonfree.pak
@@ -233,35 +233,35 @@ if(UNIX AND NOT APPLE)
 			${CMAKE_BINARY_DIR}/Resources/pak050-Locales.pak
 			${CMAKE_BINARY_DIR}/Resources/pak999-References.pak
 			${CMAKE_BINARY_DIR}/Resources/font-unifont.pak
-			DESTINATION ${OPENSPADES_INSTALL_RESOURCES})
-	endif(OPENSPADES_RESOURCES)
+			DESTINATION ${SOPASPADES_INSTALL_RESOURCES})
+	endif(SOPASPADES_RESOURCES)
 
 	# Package info (used for automatic update check)
-	INSTALL(FILES Resources/PackageInfo.json DESTINATION ${OPENSPADES_INSTALL_RESOURCES})
+	INSTALL(FILES Resources/PackageInfo.json DESTINATION ${SOPASPADES_INSTALL_RESOURCES})
 
 	# install icons
 	INSTALL(
 		DIRECTORY ${CMAKE_BINARY_DIR}/Resources/Icons/hicolor/
-		DESTINATION ${OPENSPADES_INSTALL_ICONS}
+		DESTINATION ${SOPASPADES_INSTALL_ICONS}
 		FILES_MATCHING PATTERN "*.png")
 
-	INSTALL(FILES Resources/Icons/openspades.xpm DESTINATION ${OPENSPADES_INSTALL_PIXMAP}/)
+	INSTALL(FILES Resources/Icons/sopaspades.xpm DESTINATION ${SOPASPADES_INSTALL_PIXMAP}/)
 
 	# binary file
-	INSTALL(PROGRAMS ${CMAKE_BINARY_DIR}/bin/openspades DESTINATION ${OPENSPADES_INSTALL_BINARY})
+	INSTALL(PROGRAMS ${CMAKE_BINARY_DIR}/bin/sopaspades DESTINATION ${SOPASPADES_INSTALL_BINARY})
 
 	# desktop file
-	INSTALL(FILES Resources/Unix/Desktop/openspades.desktop DESTINATION ${OPENSPADES_INSTALL_DESKTOP}/)
+	INSTALL(FILES Resources/Unix/Desktop/sopaspades.desktop DESTINATION ${SOPASPADES_INSTALL_DESKTOP}/)
 
-	# Currently there is no files in lib/openspades. But if you reading this message in future and want to
-	# place somewhere libs, binaries or other non-media stuff, place them in lib/openspades. Thank you.
+	# Currently there is no files in lib/sopaspades. But if you reading this message in future and want to
+	# place somewhere libs, binaries or other non-media stuff, place them in lib/sopaspades. Thank you.
 
 endif(UNIX AND NOT APPLE)
 
 
 
 #see http://www.cmake.org/cmake/help/v2.8.11/cpack.html
-set(CPACK_PACKAGE_NAME "OpenSpades")
+set(CPACK_PACKAGE_NAME "SopaSpades")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Open-source clone of Ace of Spades")
 set(CPACK_PACKAGE_DESCRIPTION "Open-source clone of Ace of Spades - free FPS sandbox game")
 set(CPACK_PACKAGE_VENDOR "yvt, assorted")
@@ -269,38 +269,38 @@ set(CPACK_PACKAGE_CONTACT "yvt <i@yvt.jp>")
 set(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 SET(CPACK_RESOURCE_FILE_README "${CMAKE_CURRENT_SOURCE_DIR}/README.md")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
-set(CPACK_SOURCE_PACKAGE_FILE_NAME "openspades-${OPENSPADES_FULL_VERSION}")
-SET(CPACK_PACKAGE_FILE_NAME "openspades-${OPENSPADES_FULL_VERSION}-${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
-set(CPACK_PACKAGE_INSTALL_DIRECTORY "OpenSpades ${OPENSPADES_FULL_VERSION}")
-set(CPACK_PACKAGE_VERSION_MAJOR ${OpenSpades_VERSION_MAJOR})
-set(CPACK_PACKAGE_VERSION_MINOR ${OpenSpades_VERSION_MINOR})
-set(CPACK_PACKAGE_VERSION_PATCH ${OpenSpades_VERSION_REVISION})
+set(CPACK_SOURCE_PACKAGE_FILE_NAME "sopaspades-${SOPASPADES_FULL_VERSION}")
+SET(CPACK_PACKAGE_FILE_NAME "sopaspades-${SOPASPADES_FULL_VERSION}-${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
+set(CPACK_PACKAGE_INSTALL_DIRECTORY "SopaSpades ${SOPASPADES_FULL_VERSION}")
+set(CPACK_PACKAGE_VERSION_MAJOR ${SopaSpades_VERSION_MAJOR})
+set(CPACK_PACKAGE_VERSION_MINOR ${SopaSpades_VERSION_MINOR})
+set(CPACK_PACKAGE_VERSION_PATCH ${SopaSpades_VERSION_REVISION})
 SET(CPACK_SYSTEM_NAME "${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
 SET(CPACK_TOPLEVEL_TAG "${CMAKE_SYSTEM_NAME}-${CMAKE_SYSTEM_PROCESSOR}")
 
 if(WIN32 AND NOT UNIX)
 
-	set(CPACK_NSIS_DISPLAY_NAME "OpenSpades ${OPENSPADES_FULL_VERSION}")
+	set(CPACK_NSIS_DISPLAY_NAME "SopaSpades ${SOPASPADES_FULL_VERSION}")
 	# There is a bug in NSIS that does not handle full unix paths properly. Make
 	# sure there is at least one set of four (4) backlasshes.
-	set(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\openspades.exe")
+	set(CPACK_NSIS_INSTALLED_ICON_NAME "bin\\\\sopaspades.exe")
 	# TODO: set(CPACK_PACKAGE_ICON  "")
-	set(CPACK_NSIS_HELP_LINK "https://sites.google.com/a/yvt.jp/openspades/")
+	set(CPACK_NSIS_HELP_LINK "https://sites.google.com/a/yvt.jp/sopaspades/")
 	set(CPACK_NSIS_URL_INFO_ABOUT "http://buildandshoot.com/viewforum.php?f=57")
 	SET(CPACK_NSIS_CONTACT "i@yvt.jp")
 	# TODO: SET(CPACK_NSIS_CREATE_ICONS_EXTRA "")
 	# TODO: SET(CPACK_NSIS_DELETE_ICONS_EXTRA "")
-	# TODO: SET(CPACK_NSIS_MUI_FINISHPAGE_RUN "openspades.exe")
+	# TODO: SET(CPACK_NSIS_MUI_FINISHPAGE_RUN "sopaspades.exe")
 	set(CPACK_NSIS_MODIFY_PATH ON)
 
 elseif(UNIX AND NOT APPLE)
 
 	# usage: `cmake -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release .. ; make package`
 	INCLUDE(InstallRequiredSystemLibraries)
-	set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Open-source clone of Ace of Spades - free FPS sandbox game\n OpenSpades is a clone of Voxlap Ace of Spades 0.75, which is a free \n multiplayer game created by Ben Aksoy.\n .\n Here are some features:\n .\n   - Ability to connect to vanilla/pyspades server\n   - Better performance on some modern computers/netbooks\n   - Sophisticated graphics\n   - Fully open source (GPLv3 compliant)\n   - Cross-platform")
+	set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "Open-source clone of Ace of Spades - free FPS sandbox game\n SopaSpades is a clone of Voxlap Ace of Spades 0.75, which is a free \n multiplayer game created by Ben Aksoy.\n .\n Here are some features:\n .\n   - Ability to connect to vanilla/pyspades server\n   - Better performance on some modern computers/netbooks\n   - Sophisticated graphics\n   - Fully open source (GPLv3 compliant)\n   - Cross-platform")
 	set(CPACK_DEBIAN_PACKAGE_CONTROL_EXTRA ${CMAKE_CURRENT_SOURCE_DIR}/Resources/Unix/Control/postinst)
 	set(CPACK_PACKAGING_INSTALL_PREFIX "/usr")
-	SET(CPACK_STRIP_FILES "bin/openspades")
+	SET(CPACK_STRIP_FILES "bin/sopaspades")
 	SET(CPACK_SET_DESTDIR "on")
 	SET(CPACK_GENERATOR "DEB;TGZ")
 	SET(CPACK_DEBIAN_PACKAGE_DEPENDS
@@ -315,7 +315,7 @@ elseif(UNIX AND NOT APPLE)
 
 endif(WIN32 AND NOT UNIX)
 
-set(CPACK_PACKAGE_EXECUTABLES "openspades" "Launch OpenSpades")
+set(CPACK_PACKAGE_EXECUTABLES "sopaspades" "Launch SopaSpades")
 set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY FALSE)		#everyone hates a dir inside a zip named exactly like the zip
 include(CPack)
 
