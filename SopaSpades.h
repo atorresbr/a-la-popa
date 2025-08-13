@@ -9,7 +9,7 @@
 #define OS_STRINGIFY(x)		OS_STRINGIFY2(x)
 
 #define SopaSpades_VER_STR	"# A.Torres_BR #"
-#define PACKAGE_STRING		OpenSpades_VER_STR
+#define PACKAGE_STRING		SopaSpades_VER_STR
 
 /* #undef HAS_OPENAL */
 
