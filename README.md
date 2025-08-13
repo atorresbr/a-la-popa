@@ -31,7 +31,7 @@ sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null &&
 sudo rm -rf /usr/local/games/openspades 2> /dev/null &&
 sudo rm -rf /usr/local/games/sopaspades 2> /dev/null &&
 
-## sudo rm -rf ~/.cache/icon-cache.kcache 
+## 🧮 sudo rm -rf ~/.cache/icon-cache.kcache 
 
 ## is a cache file used by some Linux desktop environments (especially KDE Plasma) to store icon images for faster access.
 ## vWhen you open applications, the system loads icons from this cache instead of reading each icon file individually.
