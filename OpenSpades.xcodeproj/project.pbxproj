@@ -284,7 +284,7 @@
 		E8690AF01D3920C800DBC331 /* pak050-Locales.pak in Resources */ = {isa = PBXBuildFile; fileRef = E8690AEA1D3920C800DBC331 /* pak050-Locales.pak */; };
 		E8690AF11D3920C800DBC331 /* pak999-References.pak in Resources */ = {isa = PBXBuildFile; fileRef = E8690AEB1D3920C800DBC331 /* pak999-References.pak */; };
 		E8725DAD1DE33B4D003BC987 /* NoiseSampler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8725DAB1DE33B4D003BC987 /* NoiseSampler.cpp */; };
-		E874834718EACF0300C29033 /* OpenSpades.icns in Resources */ = {isa = PBXBuildFile; fileRef = E874834618EACF0300C29033 /* OpenSpades.icns */; };
+		E874834718EACF0300C29033 /* SopaSpades.icns in Resources */ = {isa = PBXBuildFile; fileRef = E874834618EACF0300C29033 /* SopaSpades.icns */; };
 		E874834918ED1BE500C29033 /* SDL2_image.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E87AB82418BB3A04006B7D73 /* SDL2_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E874834A18ED1BE500C29033 /* SDL2.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E8B93AD418559EC600BD01E1 /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		E88344101E03244F000C3E39 /* FontManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E883440F1E03244F000C3E39 /* FontManager.cpp */; };
