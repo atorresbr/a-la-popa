@@ -24,17 +24,14 @@ https://github.com/atorresbr/a-la-popa/assets/13744483/1b71f093-dc32-4bd9-a0cf-2
 ## if you sytem don't have wget, this command will install it
 sudo apt install wget -y && clear && \
 
-## removing game folders from the old openspades version
+## removing game folders from the old openspades and sopaspades version
 sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null &&
 sudo rm -rf ~/.local/share/openspades* 2> /dev/null &&
-sudo rm -rf /usr/local/games/openspades 2> /dev/null &&
-
-## removing game folders from the old sopaspades version
 sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null &&
+sudo rm -rf /usr/local/games/openspades 2> /dev/null &&
 sudo rm -rf /usr/local/games/sopaspades 2> /dev/null &&
 
-
-## sudo rm -rf ~/.cache/icon-cache.kcache 
+## 🧮 sudo rm -rf ~/.cache/icon-cache.kcache 
 
 ## is a cache file used by some Linux desktop environments (especially KDE Plasma) to store icon images for faster access.
 ## vWhen you open applications, the system loads icons from this cache instead of reading each icon file individually.
