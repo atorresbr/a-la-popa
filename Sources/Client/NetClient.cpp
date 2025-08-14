@@ -19,7 +19,6 @@
 
  */
 
-#include <SopaSpades.h>
 #include <math.h>
 #include <string.h>
 #include <vector>
@@ -1543,10 +1542,10 @@ namespace spades {
 				auto beginLabel = wri.GetPosition();
 				switch (static_cast<VersionInfoPropertyId>(propertyId)) {
 					case VersionInfoPropertyId::ApplicationNameAndVersion:
-						wri.Write((uint8_t)SopaSpades_VERSION_MAJOR);
-						wri.Write((uint8_t)SopaSpades_VERSION_MINOR);
-						wri.Write((uint8_t)SopaSpades_VERSION_REVISION);
-						wri.Write("SopaSpades");
+						wri.Write((uint8_t)OpenSpades_VERSION_MAJOR);
+						wri.Write((uint8_t)OpenSpades_VERSION_MINOR);
+						wri.Write((uint8_t)OpenSpades_VERSION_REVISION);
+						wri.Write("OpenSpades");
 						break;
 					case VersionInfoPropertyId::UserLocale:
 						wri.Write(GetCurrentLocaleAndRegion());
@@ -1815,9 +1814,9 @@ namespace spades {
 			SPADES_MARK_FUNCTION();
 			NetPacketWriter wri(PacketTypeVersionSend);
 			wri.Write((uint8_t)'o');
-			wri.Write((uint8_t)SopaSpades_VERSION_MAJOR);
-			wri.Write((uint8_t)SopaSpades_VERSION_MINOR);
-			wri.Write((uint8_t)SopaSpades_VERSION_REVISION);
+			wri.Write((uint8_t)OpenSpades_VERSION_MAJOR);
+			wri.Write((uint8_t)OpenSpades_VERSION_MINOR);
+			wri.Write((uint8_t)OpenSpades_VERSION_REVISION);
 			wri.Write(VersionInfo::GetVersionInfo());
 			SPLog("Sending version back.");
 			enet_peer_send(peer, 0, wri.CreatePacket());

@@ -34,7 +34,7 @@
 #include <Core/ServerAddress.h>
 #include <Core/Stopwatch.h>
 #include <Core/VersionInfo.h>
-#include <SopaSpades.h>
+#include <OpenSpades.h>
 
 struct _ENetHost;
 struct _ENetPeer;

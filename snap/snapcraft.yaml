@@ -1,9 +1,8 @@
-name: sopaspades
-base: core22
+name: openspades
 version: 'master'
 summary: Sandbox building and FPS videogame
 description: |
-  SopaSpades is a compatible client of Ace of Spades 0.75.
+  OpenSpades is a compatible client of Ace of Spades 0.75.
   Can connect to a vanilla/pyspades/pysnip server.
   Uses OpenGL/AL for better experience.
   Open source, and cross platform.
@@ -12,8 +11,8 @@ grade: stable
 confinement: strict
 
 apps:
-  sopaspades:
-    command: sopaspades
+  openspades:
+    command: launch_openspades
     plugs:
       - network
       - network-bind
@@ -26,7 +25,7 @@ parts:
     plugin: dump
     source: snap/scripts
     organize:
-  'sopaspades': bin/
+      'launch_openspades': bin/
   openspades:
     plugin: cmake
     configflags: [-DCMAKE_BUILD_TYPE=RelWithDebInfo]
@@ -55,8 +54,3 @@ parts:
       - libgl1-mesa-glx
       - libglew1.13
       - libopenal1
-  gui:
-    plugin: dump
-    source: snap/gui
-    organize:
-      sopaspades.png: snap/gui/sopaspades.png
