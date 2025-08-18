@@ -32,14 +32,11 @@ sudo rm -rf /usr/local/games/sopaspades 2> /dev/null && \
 sudo rm -rf ~/.local/share/sopaspades 2> /dev/null && \
 sudo rm -rf /usr/local/bin/sopaspades* 2> /dev/null && \
 sudo rm -rf /usr/share/menu/sopaspades* 2> /dev/null && \
-sudo rm -rf /usr/share/applications/sopaspades.desktop
-sudo rm -rf /usr/share/pixmaps/sopaspades.xpm
-```
+sudo rm -rf /usr/share/applications/sopaspades.desktop &&
+sudo rm -rf /usr/share/pixmaps/sopaspades.xpm &&
 
-For high-resolution icons:
-```bash
 for size in 16 32 48 64 128 256; do
-  sudo rm "/usr/share/icons/hicolor/${size}x${size}/apps/sopaspades.png" 2>/dev/null
+  sudo rm "/usr/share/icons/hicolor/${size}x${size}/apps/sopaspades.png" 2>/dev/null &&
 
 ## 🧮 sudo rm -rf ~/.cache/icon-cache.kcache 
 
