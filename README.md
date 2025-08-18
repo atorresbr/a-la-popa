@@ -27,16 +27,8 @@ sudo apt install wget -y && clear && \
 sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && \
 sudo rm -rf ~/.local/share/openspades* 2> /dev/null && \
 sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null && \
-sudo rm -rf /usr/local/games/openspades* 2> /dev/null && \
-sudo rm -rf /usr/local/games/sopaspades* 2> /dev/null && \
-sudo rm -rf ~/.local/share/sopaspades 2> /dev/null && \
-sudo rm -rf /usr/local/bin/sopaspades* 2> /dev/null && \
-sudo rm -rf /usr/share/menu/sopaspades* 2> /dev/null && \
-sudo rm -rf /usr/share/applications/sopaspades.desktop &&
-sudo rm -rf /usr/share/pixmaps/sopaspades.xpm &&
-
-for size in 16 32 48 64 128 256; do
-  sudo rm "/usr/share/icons/hicolor/${size}x${size}/apps/sopaspades.png" 2>/dev/null &&
+sudo rm -rf /usr/local/games/openspades 2> /dev/null && \
+sudo rm -rf /usr/local/games/sopaspades 2> /dev/null && \
 
 ## 🧮 sudo rm -rf ~/.cache/icon-cache.kcache 
 
