@@ -29,41 +29,41 @@ include_directories(BEFORE "ENet/include")
 
 if(WIN32)
 	if(MINGW)	# = gcc, can someone confirm that this works?
-		add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/OpenSpades_rc.o COMMAND windres.exe -I${CMAKE_CURRENT_BINARY_DIR}
-			-i${CMAKE_CURRENT_BINARY_DIR}/OpenSpades.rc -o ${CMAKE_CURRENT_BINARY_DIR}/OpenSpades_rc.o)
-		SET(RESOURCE_FILES ${CMAKE_CURRENT_BINARY_DIR}/OpenSpades_rc.o)
+		add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/SopaSpades_rc.o COMMAND windres.exe -I${CMAKE_CURRENT_BINARY_DIR}
+			-i${CMAKE_CURRENT_BINARY_DIR}/OpenSpades.rc -o ${CMAKE_CURRENT_BINARY_DIR}/SopaSpades_rc.o)
+		SET(RESOURCE_FILES ${CMAKE_CURRENT_BINARY_DIR}/SopaSpades_rc.o)
 	else()
 		set(RESOURCE_FILES ${PROJECT_BINARY_DIR}/OpenSpades.rc)	# msvc
 	endif()
 endif()
 
-add_executable(OpenSpades ${AUDIO_FILES} ${AUDIO_AL_FILES} ${BINPACK_FILES} ${CLIENT_FILES} ${CORE_FILES} ${DRAW_FILES} ${ENET_FILES} ${ENET_INCLUDE} ${GUI_FILES}
+add_executable(SopaSpades ${AUDIO_FILES} ${AUDIO_AL_FILES} ${BINPACK_FILES} ${CLIENT_FILES} ${CORE_FILES} ${DRAW_FILES} ${ENET_FILES} ${ENET_INCLUDE} ${GUI_FILES}
 	${IMPORTS_FILES} ${KISS_FILES} ${JSON_FILES} ${JSON_INCLUDE} ${UNZIP_FILES} ${SCRIPTBINDING_FILES} ${RESOURCE_FILES})
-set_target_properties(OpenSpades PROPERTIES LINKER_LANGUAGE CXX)
-set_target_properties(OpenSpades PROPERTIES OUTPUT_NAME openspades)
-set_target_properties(OpenSpades PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set_target_properties(OpenSpades PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set_target_properties(OpenSpades PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set_target_properties(SopaSpades PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(SopaSpades PROPERTIES OUTPUT_NAME sopaspades)
+set_target_properties(SopaSpades PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set_target_properties(SopaSpades PROPERTIES LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set_target_properties(SopaSpades PROPERTIES ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 if(WIN32)
 	# Use a single output directory for all configs
 	# (Without this, the generated binary cannot find pak files created by mkpak.ps1 unless
 	# a user explicitly specifies a search directory)
 	foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
-		set_target_properties(OpenSpades PROPERTIES RUNTIME_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${CMAKE_BINARY_DIR}/bin)
-		set_target_properties(OpenSpades PROPERTIES LIBRARY_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${CMAKE_BINARY_DIR}/bin)
-		set_target_properties(OpenSpades PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${CMAKE_BINARY_DIR}/bin)
+		set_target_properties(SopaSpades PROPERTIES RUNTIME_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${CMAKE_BINARY_DIR}/bin)
+		set_target_properties(SopaSpades PROPERTIES LIBRARY_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${CMAKE_BINARY_DIR}/bin)
+		set_target_properties(SopaSpades PROPERTIES ARCHIVE_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${CMAKE_BINARY_DIR}/bin)
 	endforeach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
 endif()
 
-add_dependencies(OpenSpades Angelscript Angelscript_addons)
+add_dependencies(SopaSpades Angelscript Angelscript_addons)
 
 if(WIN32)
 	source_group("Resources" ${RESOURCE_FILES})
 	foreach(LIB ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY})
 		string(REGEX REPLACE "\\.lib$" ".dll" SDL_DLL ${LIB})
 		if(EXISTS "${SDL_DLL}")
-			add_custom_command(TARGET OpenSpades POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "${SDL_DLL}" "${CMAKE_BINARY_DIR}/bin/\$\(Configuration\)/")
+			add_custom_command(TARGET SopaSpades POST_BUILD COMMAND ${CMAKE_COMMAND} -E copy_if_different "${SDL_DLL}" "${CMAKE_BINARY_DIR}/bin/\$\(Configuration\)/")
 			install(PROGRAMS ${SDL_DLL} DESTINATION bin)
 		endif()
 	endforeach()
@@ -74,7 +74,7 @@ if(WIN32)
 	endif()
 	if(MSVC)
 		#lm: this sucks, msvc fucks up some linking (conflicts)
-		set_target_properties(OpenSpades PROPERTIES LINK_FLAGS_RELEASE "/NODEFAULTLIB:\"libcmt.lib\" /NODEFAULTLIB:\"libcmtd.lib\"")
+		set_target_properties(SopaSpades PROPERTIES LINK_FLAGS_RELEASE "/NODEFAULTLIB:\"libcmt.lib\" /NODEFAULTLIB:\"libcmtd.lib\"")
 	endif()
 endif()
 
@@ -94,26 +94,26 @@ source_group("libs\\json\\include" FILES ${JSON_INCLUDE})
 source_group("ScriptBindings" FILES ${SCRIPTBINDING_FILES})
 source_group("libs\\unzip" FILES ${UNZIP_FILES})
 
-target_link_libraries(OpenSpades ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ZLIB_LIBRARIES} ${CURL_LIBRARY} ${FREETYPE_LIBRARIES} ${CMAKE_DL_LIBS} ${ANGELSCRIPT_LIBS} ${OpusFile_LIBRARY})
+target_link_libraries(SopaSpades ${SDL2_LIBRARY} ${SDL2_IMAGE_LIBRARY} ${OPENGL_LIBRARIES} ${GLEW_LIBRARY} ${ZLIB_LIBRARIES} ${CURL_LIBRARY} ${FREETYPE_LIBRARIES} ${CMAKE_DL_LIBS} ${ANGELSCRIPT_LIBS} ${OpusFile_LIBRARY})
 
 #todo: MACOSX_BUNDLE_ICON_FILE ?
 
 if(OPENAL_FOUND)
-	target_link_libraries(OpenSpades ${OPENAL_LIBRARY})
+	target_link_libraries(SopaSpades ${OPENAL_LIBRARY})
 	include_directories(${OPENAL_INCLUDE_DIRS})
 endif()
 
 if(WIN32)
-	target_link_libraries(OpenSpades ws2_32.lib winmm.lib)
+	target_link_libraries(SopaSpades ws2_32.lib winmm.lib)
 else()
-	target_link_libraries(OpenSpades Xext)
+	target_link_libraries(SopaSpades Xext)
 endif()
 
 if(UNIX)
 	if(NOT CMAKE_SYSTEM_NAME MATCHES "BSD")
-		target_link_libraries(OpenSpades rt)
+		target_link_libraries(SopaSpades rt)
 	endif()
-	target_link_libraries(OpenSpades pthread)
+	target_link_libraries(SopaSpades pthread)
 endif()
 
-#install(TARGETS OpenSpades DESTINATION bin)
+#install(TARGETS SopaSpades DESTINATION bin)
