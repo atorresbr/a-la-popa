@@ -58,7 +58,7 @@ wget https://github.com/atorresbr/a-la-popa/raw/main/MODERN-PACK/modern_pack.zip
 unzip -o modern_pack.zip && cd ~/ \
 
 ## starting the game 
-openspades
+sopaspades
 
 ```
 
