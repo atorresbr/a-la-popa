@@ -128,14 +128,6 @@ echo
 
 echo -ne ${b_yellow}
 
- rm -rf ~/.local/share/openspades* 2> /dev/null && \
- rm -rf ~/.local/share/sopaspades* 2> /dev/null && \
- rm -rf /usr/local/games/openspades 2> /dev/null && \
- rm -rf /usr/local/games/sopaspades 2> /dev/null && \
- rm -rf ~/.cache/icon-cache.kcache
- rm -rf ~/.cache/thumbnails/*
- rm -rf ~/.cache/icons/*
-
 sleep 2
 echo -e " sudo rm -rf /usr/local/share/games/openspades "
 
