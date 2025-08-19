@@ -164,7 +164,7 @@ echo -ne ${nc}
 sleep 2
 
 ## if you sytem don't have wget, this command will install it
-sudo apt install wget -y && clear && \
+#sudo apt install wget -y && clear && \
 
 ## removing game folders from the old openspades and sopaspades version
 sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && \
