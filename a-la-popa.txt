@@ -128,11 +128,6 @@ echo
 
 echo -ne ${b_yellow}
 
-
-
-
-
-
 sleep 2
 echo -e " sudo rm -rf /usr/local/share/games/openspades "
 
