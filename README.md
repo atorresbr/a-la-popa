@@ -20,8 +20,21 @@ https://github.com/atorresbr/a-la-popa/assets/13744483/1b71f093-dc32-4bd9-a0cf-2
    🇧🇷 Se você é iniciante com Linux, copie o comando nos pequenos quadrados na direita dos comandos. Depois de copiar, cole com botão direito no seu terminal e aperte ENTER.
 
 ```bash
-## if you sytem don't have wget, this command will install it
-sudo apt install wget -y && clear && \
+# Check if wget is installed
+if command -v wget >/dev/null 2>&1; then
+    echo "wget is installed."
+else
+    echo "wget is not installed."
+    # Optional: You could add installation commands here for specific package managers, e.g.:
+    # sudo apt-get update && sudo apt-get install -y wget # For Debian/Ubuntu
+    # sudo yum install -y wget # For RedHat/CentOS
+fi
+
+# Continue with other commands in the script
+echo "Continuing with other script commands..."
+# Example of other commands:
+# ls -l
+# echo "This is another command."
 
 ## removing game folders from the old openspades and sopaspades version
 sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && \
@@ -59,6 +72,30 @@ unzip -o modern_pack.zip && cd ~/ \
 
 ## starting the game 
 openspades
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ```
 
