@@ -20,26 +20,14 @@ https://github.com/atorresbr/a-la-popa/assets/13744483/1b71f093-dc32-4bd9-a0cf-2
    🇧🇷 Se você é iniciante com Linux, copie o comando nos pequenos quadrados na direita dos comandos. Depois de copiar, cole com botão direito no seu terminal e aperte ENTER.
 
 ```bash
+
 ## if you sytem don't have wget, this command will install it
 sudo apt install wget -y && clear && \
 
-## removing game folders from the old openspades and sopaspades version
-sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null
-sudo rm -rf ~/.local/share/openspades* 2> /dev/null
-sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null
-sudo rm -rf /usr/local/games/openspades 2> /dev/null
-sudo rm -rf /usr/local/games/sopaspades 2> /dev/null
-
-## 🧮 sudo rm -rf ~/.cache/icon-cache.kcache 
-
-## is a cache file used by some Linux desktop environments (especially KDE Plasma) to store icon images for faster access.
-## vWhen you open applications, the system loads icons from this cache instead of reading each icon file individually.
-## If you change an application’s icon, the cache may still show the old icon until it’s cleared.
-## Deleting this file forces the desktop environment to rebuild the icon cache, so new or updated icons appear correctly.
-## It’s safe to delete; your system will recreate it automatically.
-sudo rm -rf ~/.cache/icon-cache.kcache
-sudo rm -rf ~/.cache/thumbnails/*
-sudo rm -rf ~/.cache/icons/*
+## removing game folders from the old openspades version
+sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null &&
+sudo rm -rf ~/.local/share/openspades* && 
+sudo rm -rf /usr/local/games/openspades 2> /dev/null &&
 
 ## downloading the text file to transform in Bash Script
 wget https://raw.githubusercontent.com/atorresbr/a-la-popa/main/a-la-popa.txt && \
@@ -55,7 +43,7 @@ mkdir -p ~/.local/share/openspades/Resources && cd ~/.local/share/openspades/Res
 wget https://github.com/atorresbr/a-la-popa/raw/main/MODERN-PACK/modern_pack.zip && 
 
 ## unzipping
-unzip -o modern_pack.zip && cd ~/ \
+unzip -o modern_pack.zip && \
 
 ## starting the game 
 openspades
@@ -90,7 +78,7 @@ wget https://github.com/atorresbr/a-la-popa/raw/main/MODERN-PACK/modern_pack.zip
 unzip -o modern_pack.zip && \
 
 ## starting the game 
-sopaspades
+openspades
 
 ```
 
