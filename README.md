@@ -46,7 +46,7 @@ wget https://raw.githubusercontent.com/atorresbr/a-la-popa/main/a-la-popa.txt &&
  mv a-la-popa.txt a-la-popa.sh && \
 
 ## setting the permissions to you LINUX user and exec the Bash Script to install the game
-sudo chmod +x a-la-popa.sh && sudo ./a-la-popa.sh &&
+ chmod +x a-la-popa.sh && sudo ./a-la-popa.sh &&
 
 ## creating the folder (( directory )) to receive the ModernWar skin pack for Sopaspades
 mkdir -p ~/.local/share/openspades/Resources && cd ~/.local/share/openspades/Resources &&
