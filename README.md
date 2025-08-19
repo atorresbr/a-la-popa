@@ -24,11 +24,11 @@ https://github.com/atorresbr/a-la-popa/assets/13744483/1b71f093-dc32-4bd9-a0cf-2
 sudo apt install wget -y && clear && \
 
 ## removing game folders from the old openspades and sopaspades version
-sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && \
-sudo rm -rf ~/.local/share/openspades* 2> /dev/null && \
-sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null && \
-sudo rm -rf /usr/local/games/openspades 2> /dev/null && \
-sudo rm -rf /usr/local/games/sopaspades 2> /dev/null && \
+sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null
+sudo rm -rf ~/.local/share/openspades* 2> /dev/null
+sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null
+sudo rm -rf /usr/local/games/openspades 2> /dev/null
+sudo rm -rf /usr/local/games/sopaspades 2> /dev/null
 
 ## 🧮 sudo rm -rf ~/.cache/icon-cache.kcache 
 
