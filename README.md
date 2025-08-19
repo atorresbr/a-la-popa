@@ -21,7 +21,7 @@ https://github.com/atorresbr/a-la-popa/assets/13744483/1b71f093-dc32-4bd9-a0cf-2
 
 ```bash
 ## if you sytem don't have wget, this command will install it
-sudo apt update && sudo apt install wget -y && clear &> /dev/null \
+sudo apt install wget -y && clear && \
 
 ## removing game folders from the old openspades and sopaspades version
 sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && \
