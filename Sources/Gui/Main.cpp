@@ -405,7 +405,7 @@ int main(int argc, char **argv) {
 		if (stat((xdg_data_home + "/sopaspades").c_str(), &info) != 0) {
 			if (stat((home + "/.sopaspades").c_str(), &info) != 0) {
 			} else if (info.st_mode & S_IFDIR) {
-				SPLog("Openspades directory in XDG_DATA_HOME not found, though old directory "
+				SPLog("Sopaspades directory in XDG_DATA_HOME not found, though old directory "
 				      "exists. Trying to resolve compatibility problem.");
 
 				if (rename((home + "/.sopaspades").c_str(),
