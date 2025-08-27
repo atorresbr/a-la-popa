@@ -189,8 +189,8 @@ if(CMAKE_CXX_COMPILER_ID)
 endif()
 
 
-configure_file("${PROJECT_SOURCE_DIR}/OpenSpades.h.in" "${PROJECT_BINARY_DIR}/OpenSpades.h")
-configure_file("${PROJECT_SOURCE_DIR}/OpenSpades.rc.in" "${PROJECT_BINARY_DIR}/OpenSpades.rc")
+configure_file("${PROJECT_SOURCE_DIR}/SopaSpades.h.in" "${PROJECT_BINARY_DIR}/SopaSpades.h")
+configure_file("${PROJECT_SOURCE_DIR}/SopaSpades.rc.in" "${PROJECT_BINARY_DIR}/SopaSpades.rc")
 include_directories(BEFORE "${PROJECT_BINARY_DIR}")
 include_directories("${SDL2_INCLUDE_DIR}")
 include_directories("${SDL2_IMAGE_INCLUDE_DIR}")
