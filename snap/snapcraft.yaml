@@ -25,7 +25,7 @@ parts:
     plugin: dump
     source: snap/scripts
     organize:
-  'launch_sopaspades': bin/
+      'launch_sopaspades': bin/
   sopaspades:
     plugin: cmake
     configflags: [-DCMAKE_BUILD_TYPE=RelWithDebInfo]

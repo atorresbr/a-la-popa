@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: openspades\n"
+"Project-Id-Version: sopaspades\n"
 "Report-Msgid-Bugs-To: i at yvt.jp\n"
 "POT-Creation-Date: 2016-12-25 23:47-0200\n"
 "PO-Revision-Date: 2017-12-31 04:46-0500\n"
@@ -12,9 +12,9 @@ msgstr ""
 "X-Generator: crowdin.com\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Crowdin-Project: openspades\n"
+"X-Crowdin-Project: sopaspades\n"
 "X-Crowdin-Language: pl\n"
-"X-Crowdin-File: openspades.pot\n"
+"X-Crowdin-File: sopaspades.pot\n"
 "Language: pl_PL\n"
 
 #: Sources/Client/Client.cpp:585 Sources/Client/Client.cpp:586
@@ -408,18 +408,18 @@ msgstr "System lokalizacji załadowany"
 #: Sources/Gui/Main.cpp:604 Sources/Gui/Runner.cpp:56 Sources/Gui/Main.cpp:633
 #: Sources/Gui/Runner.cpp:56
 msgctxt "Main"
-msgid "A serious error caused OpenSpades to stop working:\n\n"
+msgid "A serious error caused SopaSpades to stop working:\n\n"
 "{0}\n\n"
 "See SystemMessages.log for more details."
-msgstr "Poważny błąd zatrzymał OpenSpades:\n\n"
+msgstr "Poważny błąd zatrzymał SopaSpades:\n\n"
 "{0}\n\n"
 "Zobacz SystemMessages.log by poznać szczegóły."
 
 #: Sources/Gui/Main.cpp:612 Sources/Gui/Runner.cpp:62 Sources/Gui/Main.cpp:641
 #: Sources/Gui/Runner.cpp:62
 msgctxt "Main"
-msgid "OpenSpades Fatal Error"
-msgstr "Błąd krytyczny OpenSpades"
+msgid "SopaSpades Fatal Error"
+msgstr "Błąd krytyczny SopaSpades"
 
 #: Sources/Gui/MainScreen.cpp:225 Sources/Gui/MainScreen.cpp:220
 msgctxt "MainScreen"
@@ -501,8 +501,8 @@ msgstr "Zdecyduj później"
 #: Resources/Scripts/Gui/CreateProfileScreen.as:80
 #: Resources/Scripts/Gui/CreateProfileScreen.as:80
 msgctxt "CreateProfileScreen"
-msgid "Welcome to OpenSpades"
-msgstr "Witaj w OpenSpades"
+msgid "Welcome to SopaSpades"
+msgstr "Witaj w SopaSpades"
 
 #: Resources/Scripts/Gui/CreateProfileScreen.as:88
 #: Resources/Scripts/Gui/CreateProfileScreen.as:88
@@ -1131,7 +1131,7 @@ msgstr "Włącz ekran startowy"
 #: Resources/Scripts/Gui/Preferences.as:757
 #: Resources/Scripts/Gui/Preferences.as:757
 msgctxt "Preferences"
-msgid "Quit and restart OpenSpades to access the startup window."
+msgid "Quit and restart SopaSpades to access the startup window."
 msgstr "Wyjdź i włącz na nowo by dostać się do ekranu startowego."
 
 #: Resources/Scripts/Gui/Preferences.as:758
@@ -1223,8 +1223,8 @@ msgstr "Tryb pełnoekranowy"
 #: Resources/Scripts/Gui/StartupScreen.as:1103
 #: Resources/Scripts/Gui/StartupScreen.as:1103
 msgctxt "StartupScreen"
-msgid "By running in fullscreen mode OpenSpades occupies the screen, making it easier for you to concentrate on playing the game."
-msgstr "Uruchamiając OpenSpades w trybie pełnoekranowym, łatwiej jest ci się skupić na grze."
+msgid "By running in fullscreen mode SopaSpades occupies the screen, making it easier for you to concentrate on playing the game."
+msgstr "Uruchamiając SopaSpades w trybie pełnoekranowym, łatwiej jest ci się skupić na grze."
 
 #: Resources/Scripts/Gui/StartupScreen.as:1110
 #: Resources/Scripts/Gui/StartupScreen.as:1492
@@ -1559,8 +1559,8 @@ msgstr "YSR"
 #: Resources/Scripts/Gui/StartupScreen.as:1512
 #: Resources/Scripts/Gui/StartupScreen.as:1512
 msgctxt "StartupScreen"
-msgid "YSR is an experimental 3D HDR sound engine optimized for OpenSpades. It features several enhanced features including automatic load control, dynamics compressor, HRTF-based 3D audio, and high quality reverb."
-msgstr "YSR to eksperymentalny silnik do generowania dźwięku przestrzennego. Zostal specjalnie zoptymalizowany pod OpenSpades. Używa wielu rozbudowanych funkcji."
+msgid "YSR is an experimental 3D HDR sound engine optimized for SopaSpades. It features several enhanced features including automatic load control, dynamics compressor, HRTF-based 3D audio, and high quality reverb."
+msgstr "YSR to eksperymentalny silnik do generowania dźwięku przestrzennego. Zostal specjalnie zoptymalizowany pod SopaSpades. Używa wielu rozbudowanych funkcji."
 
 #. ! The name of audio driver that outputs no audio.
 #: Resources/Scripts/Gui/StartupScreen.as:1523
@@ -1732,8 +1732,8 @@ msgstr "Wersja {0} jest dostępna! (Obecnie używasz {1})"
 #: Resources/Scripts/Gui/UpdateCheckView.as:105
 #: Resources/Scripts/Gui/UpdateCheckView.as:105
 msgctxt "UpdateCheck"
-msgid "You're using the latest version of OpenSpades. ({0})"
-msgstr "Używasz najnowszej wersji OpenSpades. ({0})"
+msgid "You're using the latest version of SopaSpades. ({0})"
+msgstr "Używasz najnowszej wersji SopaSpades. ({0})"
 
 #: Resources/Scripts/Gui/UpdateCheckView.as:110
 #: Resources/Scripts/Gui/UpdateCheckView.as:110

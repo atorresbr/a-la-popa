@@ -11,7 +11,7 @@ echo "Generating FHS icons"
 
 mkdir tmp/
 
-convert "$SRC_DIR/OpenSpades.ico" \
+convert "$SRC_DIR/SopaSpades.ico" \
 	-set filename:res '%wx%h' \
 	'tmp/%[filename:res].png'
 

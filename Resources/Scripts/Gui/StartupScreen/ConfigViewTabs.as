@@ -1,20 +1,20 @@
 /*
  Copyright (c) 2013 yvt
 
- This file is part of OpenSpades.
+ This file is part of SopaSpades.
 
- OpenSpades is free software: you can redistribute it and/or modify
+ SopaSpades is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
- OpenSpades is distributed in the hope that it will be useful,
+ SopaSpades is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
 
  You should have received a copy of the GNU General Public License
- along with OpenSpades.  If not, see <http://www.gnu.org/licenses/>.
+ along with SopaSpades.  If not, see <http://www.gnu.org/licenses/>.
 
  */
 
@@ -468,7 +468,7 @@ namespace spades {
                 e.GroupName = "driver";
                 HelpHandler(helpView,
                     _Tr("StartupScreen", "YSR is an experimental 3D HDR sound engine optimized "
-                    "for OpenSpades. It features several enhanced features including "
+                    "for SopaSpades. It features several enhanced features including "
                     "automatic load control, dynamics compressor, HRTF-based "
                     "3D audio, and high quality reverb.")).Watch(e);
                 @e.Activated = spades::ui::EventHandler(this.OnDriverYSR);

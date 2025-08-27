@@ -8,7 +8,7 @@
 #include <cassert>
 
 /*
- * BDF to OpenSpades font converter.
+ * BDF to SopaSpades font converter.
  *
  * Copyright (c) 2013 yvt
  * WTFPL except for the targa reader/writer part.
@@ -1841,7 +1841,7 @@ static std::vector<std::string> Split(const std::string &str, const std::string 
 int main(int argc, char **argv) {
 
 	if (argc <= 1) {
-		std::cout << "BDF (JIS Code) to OpenSpades font converter" << std::endl;
+		std::cout << "BDF (JIS Code) to SopaSpades font converter" << std::endl;
 		std::cout << "USAGE: BdfToOSFont OUTFILE [FILTERS...] < BDFFONT.bdf" << std::endl;
 		return 0;
 	}
@@ -2041,7 +2041,7 @@ int main(int argc, char **argv) {
 		binPath += ".ospfont";
 		std::ofstream ofs(binPath);
 
-		ofs.write("OpenSpadesFontFl", 16);
+		ofs.write("SopaSpadesFontFl", 16);
 
 		uint32_t count = static_cast<uint32_t>(glyphs.size());
 		static_assert(sizeof(count) == 4, "Oh no");

@@ -2,20 +2,20 @@
  Copyright (c) 2013 yvt
  based on code of pysnip (c) Mathias Kaerlev 2011-2012.
 
- This file is part of OpenSpades.
+ This file is part of SopaSpades.
 
- OpenSpades is free software: you can redistribute it and/or modify
+ SopaSpades is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
- OpenSpades is distributed in the hope that it will be useful,
+ SopaSpades is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
 
  You should have received a copy of the GNU General Public License
- along with OpenSpades.  If not, see <http://www.gnu.org/licenses/>.
+ along with SopaSpades.  If not, see <http://www.gnu.org/licenses/>.
 
  */
 
@@ -1542,10 +1542,10 @@ namespace spades {
 				auto beginLabel = wri.GetPosition();
 				switch (static_cast<VersionInfoPropertyId>(propertyId)) {
 					case VersionInfoPropertyId::ApplicationNameAndVersion:
-						wri.Write((uint8_t)OpenSpades_VERSION_MAJOR);
-						wri.Write((uint8_t)OpenSpades_VERSION_MINOR);
-						wri.Write((uint8_t)OpenSpades_VERSION_REVISION);
-						wri.Write("OpenSpades");
+						wri.Write((uint8_t)SopaSpades_VERSION_MAJOR);
+						wri.Write((uint8_t)SopaSpades_VERSION_MINOR);
+						wri.Write((uint8_t)SopaSpades_VERSION_REVISION);
+						wri.Write("SopaSpades");
 						break;
 					case VersionInfoPropertyId::UserLocale:
 						wri.Write(GetCurrentLocaleAndRegion());
@@ -1814,9 +1814,9 @@ namespace spades {
 			SPADES_MARK_FUNCTION();
 			NetPacketWriter wri(PacketTypeVersionSend);
 			wri.Write((uint8_t)'o');
-			wri.Write((uint8_t)OpenSpades_VERSION_MAJOR);
-			wri.Write((uint8_t)OpenSpades_VERSION_MINOR);
-			wri.Write((uint8_t)OpenSpades_VERSION_REVISION);
+			wri.Write((uint8_t)SopaSpades_VERSION_MAJOR);
+			wri.Write((uint8_t)SopaSpades_VERSION_MINOR);
+			wri.Write((uint8_t)SopaSpades_VERSION_REVISION);
 			wri.Write(VersionInfo::GetVersionInfo());
 			SPLog("Sending version back.");
 			enet_peer_send(peer, 0, wri.CreatePacket());

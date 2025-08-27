@@ -4,6 +4,6 @@
     "UpdateFeed": {
         "Type": "Standard",
         "Platform": "SourceCode",
-        "URL": "http://openspades.yvt.jp/api/version.json"
+        "URL": "http://sopaspades.yvt.jp/api/version.json"
     }
 }

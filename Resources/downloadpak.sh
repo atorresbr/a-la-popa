@@ -15,10 +15,10 @@ SRC_DIR="`dirname "$0"`"
 # no color, not -m flag for OpenBSD
 if [[ "$OS_BASE" != 'OpenBSD' ]]; then
 	PAK_URL=$(grep --max-count=1 --no-filename --context=0 --color=never \
-		"OpenSpadesDevPackage" "$SRC_DIR/PakLocation.txt")
+		"SopaSpadesDevPackage" "$SRC_DIR/PakLocation.txt")
 else
 	PAK_URL=$(grep --no-filename \
-		"OpenSpadesDevPackage" "$SRC_DIR/PakLocation.txt" | head -n1)
+		"SopaSpadesDevPackage" "$SRC_DIR/PakLocation.txt" | head -n1)
 fi
 echo "BASEURL ************ $PAK_URL"
 PAK_NAME=$(basename "$PAK_URL")

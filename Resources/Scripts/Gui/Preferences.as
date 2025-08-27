@@ -1,20 +1,20 @@
 /*
  Copyright (c) 2013 yvt
 
- This file is part of OpenSpades.
+ This file is part of SopaSpades.
 
- OpenSpades is free software: you can redistribute it and/or modify
+ SopaSpades is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
- OpenSpades is distributed in the hope that it will be useful,
+ SopaSpades is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
 
  You should have received a copy of the GNU General Public License
- along with OpenSpades.  If not, see <http://www.gnu.org/licenses/>.
+ along with SopaSpades.  If not, see <http://www.gnu.org/licenses/>.
 
  */
 
@@ -768,7 +768,7 @@ namespace spades {
 			bool enabled = cl_showStartupWindow.IntValue != 0;
 
 			msgLabel.Text = enabled ?
-				_Tr("Preferences", "Quit and restart OpenSpades to access the startup window."):
+				_Tr("Preferences", "Quit and restart SopaSpades to access the startup window."):
 				_Tr("Preferences", "Some settings only can be changed in the startup window.");
 			enableButton.Enable = not enabled;
 		}

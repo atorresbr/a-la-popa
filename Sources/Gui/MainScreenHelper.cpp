@@ -3,20 +3,20 @@
 
  Portion of the code is based on Serverbrowser.cpp (Copyright (c) 2013 learn_more).
 
- This file is part of OpenSpades.
+ This file is part of SopaSpades.
 
- OpenSpades is free software: you can redistribute it and/or modify
+ SopaSpades is free software: you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
  the Free Software Foundation, either version 3 of the License, or
  (at your option) any later version.
 
- OpenSpades is distributed in the hope that it will be useful,
+ SopaSpades is distributed in the hope that it will be useful,
  but WITHOUT ANY WARRANTY; without even the implied warranty of
  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  GNU General Public License for more details.
 
  You should have received a copy of the GNU General Public License
- along with OpenSpades.  If not, see <http://www.gnu.org/licenses/>.
+ along with SopaSpades.  If not, see <http://www.gnu.org/licenses/>.
 
  */
 
@@ -35,7 +35,7 @@
 #include <Core/Settings.h>
 #include <Core/Thread.h>
 #include <Gui/PackageUpdateManager.h>
-#include <OpenSpades.h>
+#include <SopaSpades.h>
 
 DEFINE_SPADES_SETTING(cl_serverListUrl, "http://services.buildandshoot.com/serverlist.json");
 
@@ -151,7 +151,7 @@ namespace spades {
 							self->buffer.append(reinterpret_cast<char *>(ptr), numBytes);
 							return numBytes;
 						};
-						curl_easy_setopt(cHandle.get(), CURLOPT_USERAGENT, OpenSpades_VER_STR);
+						curl_easy_setopt(cHandle.get(), CURLOPT_USERAGENT, SopaSpades_VER_STR);
 						curl_easy_setopt(cHandle.get(), CURLOPT_URL, cl_serverListUrl.CString());
 						curl_easy_setopt(cHandle.get(), CURLOPT_WRITEFUNCTION, curlWriteCallback);
 						curl_easy_setopt(cHandle.get(), CURLOPT_WRITEDATA, this);
