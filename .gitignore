@@ -4,7 +4,7 @@
 # paks
 *.pak
 DevPaks*.zip
-OpenSpadesDevPackage-*.zip
+SopaSpadesDevPackage-*.zip
 
 # Proprietary resource files
 Resources/Nonfree
@@ -28,7 +28,7 @@ build
 *.lib
 
 # cmake generated
-OpenSpades.h
+SopaSpades.h
 Makefile
 CMakeCache.txt
 *CMakeFiles/
@@ -58,7 +58,7 @@ UserInterfaceState.xcuserstate
 Thumbs.db
 
 # MSVC related (preferred build path)
-OpenSpades.msvc/
+SopaSpades.msvc/
 
 # Linux build path
 openspades.mk/
@@ -121,7 +121,7 @@ ipch/
 *.pdb
 *.sln
 *.vcxproj
-OpenSpades.rc
+SopaSpades.rc
 
 
 #User-made script:

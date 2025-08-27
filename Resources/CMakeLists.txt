@@ -1,5 +1,5 @@
 
-if(OPENSPADES_RESOURCES)
+if(SOPASPADES_RESOURCES)
 
 	if (WIN32)
 		# No automatic downloading for Windows (for now)

@@ -21,7 +21,7 @@ BEGIN
 			VALUE "CompanyName",		"yvt.jp"
 			VALUE "FileDescription",	"A Win32 program."
 			VALUE "FileVersion",		"@SopaSpades_VERSION_MAJOR@.@SopaSpades_VERSION_MINOR@.@SopaSpades_VERSION_REVISION@.0"
-			VALUE "ProductName",		"SopaSpades${OPENSPADES_EXTRATITLE}"
+			VALUE "ProductName",		"SopaSpades${SOPASPADES_EXTRATITLE}"
 			VALUE "ProductVersion",		"@SopaSpades_VERSION_MAJOR@.@SopaSpades_VERSION_MINOR@.@SopaSpades_VERSION_REVISION@"
 			VALUE "LegalCopyright",		"yvt.jp"
 		END

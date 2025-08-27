@@ -441,8 +441,8 @@ namespace spades {
 #if !NDEBUG
 					caption.append(" DEBUG build");
 #endif
-#ifdef OPENSPADES_COMPILER_STR
-					caption.append(" " OPENSPADES_COMPILER_STR); // add compiler to window title
+#ifdef SOPASPADES_COMPILER_STR
+					caption.append(" " SOPASPADES_COMPILER_STR); // add compiler to window title
 #endif
 				}
 
