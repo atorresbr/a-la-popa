@@ -1,9 +1,10 @@
+
 [Desktop Entry]
 Version=1.0
 Type=Application
 Terminal=false
-Exec=openspades %U
-Name=OpenSpades
+Exec=sopaspades %U
+Name=SopaSpades
 GenericName=Sandbox building and FPS videogame
 Comment=Open-source clone of Ace of Spades
 Keywords=game;fps;sandbox;voxel;aos;
