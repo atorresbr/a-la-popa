@@ -161,18 +161,38 @@ echo
 
 echo -ne ${nc}
 
+# These commands run as sudo (root)
+rm -rf /usr/local/games/openspades 2>/dev/null
+rm -rf /usr/local/games/sopaspades 2>/dev/null
+rm -rf /usr/local/share/games/openspades 2>/dev/null
+rm -rf /usr/local/share/games/sopaspades 2>/dev/null
+rm -rf /usr/share/applications/openspades.desktop 2>/dev/null
+rm -rf /usr/share/applications/sopaspades.desktop 2>/dev/null
+rm -rf /usr/share/pixmaps/openspades.xpm 2>/dev/null
+rm -rf /usr/share/pixmaps/sopaspades.xpm 2>/dev/null
+rm -rf /usr/games/openspades 2>/dev/null
+rm -rf /usr/games/sopaspades 2>/dev/null
+
+  # Clean cache files
+  rm -rf /home/*/.cache/icon-cache.kcache && \
+  rm -rf /home/*/.cache/thumbnails/* && \
+  rm -rf /home/*/.cache/icons/* && \
+
 sleep 2
+# Replace line 165:
 
-## sudo rm -rf /usr/local/share/games/openspades &&
-## sudo rm -rf /usr/local/games/openspades &&
-sudo apt purge openspades -y && \
-
-## sudo rm -rf ~/.local/share/openspades &&
+# With this:
+if dpkg -l | grep -q openspades; then
+  echo " OPENSPADES was installed, removing it 🗑️ "
+  sudo apt purge openspades -y
+else
+  echo " OpenSpades or SynSpades are not here 😬 "
+fi && \
 
 echo
 echo
 
-echo -e " it's not a error 🙌 👆 "
+#echo -e " it's not a error 🙌 👆 "
 
 echo
 echo
@@ -268,10 +288,12 @@ sleep 1
 
 echo -ne ${b_yellow}
 
-sudo apt-get install pkg-config libglew-dev libcurl3-openssl-dev libsdl2-dev \
+sudo apt-get install build-essential pkg-config libglew-dev libcurl4-openssl-dev libsdl2-dev \
   libsdl2-image-dev libalut-dev xdg-utils libfreetype6-dev libopus-dev \
-  libopusfile-dev cmake imagemagick \
-  libjpeg-dev libxinerama-dev libxft-dev
+   imagemagick zip unzip libopusfile-dev cmake\
+  libjpeg-dev libxinerama-dev libxft-dev && \
+
+
 
 echo
 echo
@@ -328,9 +350,9 @@ echo
 
 sleep 2
 
-  sudo rm -Rf sopaspades && sudo rm -Rf openspades && sudo rm -Rf a-la-popa && sudo rm -Rf alapopa &&
-  git clone https://github.com/atorresbr/a-la-popa.git && sudo chmod +x a-la-popa && 
-  cd a-la-popa && \
+  sudo rm -Rf sopaspades && sudo rm -Rf openspades && sudo rm -Rf a-la-popa &&
+  git clone https://github.com/atorresbr/sopaspades.git &&
+  cd sopaspades && \
 
 echo
 echo   
@@ -384,7 +406,7 @@ echo
 sleep 1
 
    mkdir sopaspades.mk && sudo chmod +x sopaspades.mk &&
-   cd sopaspades.mk && cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && make &&
+   cd sopaspades.mk && cmake .. -DCMAKE_BUILD_TYPE=RelWithDebInfo && make -j$(nproc) 2>&1 | tee sopaspades_build.log &&
    sudo make install
    
 echo
@@ -427,12 +449,10 @@ sleep 1
   echo
   echo
 
-echo " openspades 🔫 " 
+echo " sopaspades 🔫 " 
 
 ## cd $REPO_DIRECTORY a-la-popa/sopaspades.mk; bin/openspades
-## cd ~/a-la-popa/sopaspades.mk; bin/openspades
+## cd ~/sopaspades/sopaspades.mk; bin/sopaspades
 
 echo
 echo 
-
-

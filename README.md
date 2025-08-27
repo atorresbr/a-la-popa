@@ -1,17 +1,38 @@
-# 🍜 SOPA SPADES 🇧🇷 !
+# 🍜 SOPA SPADES 🔫🇧🇷✨
 
-## - A Beautiful OpenSpades Client to SOPA Servers ( 😋 sopa! / soup!)
+## - A Beautiful Spades Client for SOPA Servers🍜 - 😋 sopa!✨ soupy✨!
 
 ![SOPA!](https://repository-images.githubusercontent.com/564385628/bf3842ec-ccf9-44e5-ad6a-2b1a4272909a)
 
 
-[OpenSpades Website](https://openspades.yvt.jp) — [Community](https://buildandshoot.com)
+[Original OpenSpades Website](https://openspades.yvt.jp) — [Community](https://buildandshoot.com)
 
-<!-- **Important**: If you have previously installed OpenSpades or any modified version of OpenSpades, you have to uninstall it manually by `sudo rm -rf /usr/local/share/games/openspades` or `sudo rm -rf /usr/local/share/games/sopaspades` before installing a new one. -->
+<!--**Important**: If you have previously installed OpenSpades or any modified version of SopaSpades, you have to uninstall it manually by `sudo rm -rf /usr/local/share/games/openspades` or `sudo rm -rf /usr/local/share/games/sopaspades` before installing a new one.-->
 
 https://github.com/atorresbr/a-la-popa/assets/13744483/1b71f093-dc32-4bd9-a0cf-2dfdc1c10408
 
 ## 🍜 🇪🇸 Para los Principiantes | 🇧🇷 Para os iniciantes | 🇺🇸 To Benginners
+
+
+
+## 🧲⚡ wget 
+
+
+   🇪🇸 Primero, verifique si wget está instalado en su PC, simplemente copie el comando haciendo clic en los dos pequeños cuadrados en el lado derecho del comando.
+
+   🇺🇸 Firs, verify if wget alread installed on your machine, just click on two lil squares on the right side from the command.
+
+   🇧🇷 primeiro, veja se o wget está instalado no seu pc, basta copiar o comando, clicando nos dois pequenos quadrados no lado direito do comando.
+
+```bash
+## If your system doesn't have wget, this command will install it
+command -v wget >/dev/null 2>&1 || sudo apt install wget -y &&
+sudo rm -rf sopaspades 2>/dev/null || true &&
+sudo rm -rf a-la-popa 2>/dev/null || true &&
+rm -f a-la-popa.sh 2>/dev/null || true
+```
+   
+## 🪄✨ install * 🪄✨ instalando * 🪄✨ instalando el juego
 
    🇪🇸 Eres principiante  con Linux ?, copie el comando en los cuadrados a la derecha y use el botón derecho del mouse para pegarlo en su terminal y presione ENTER para instalar el juego.
 
@@ -19,46 +40,67 @@ https://github.com/atorresbr/a-la-popa/assets/13744483/1b71f093-dc32-4bd9-a0cf-2
 
    🇧🇷 Se você é iniciante com Linux, copie o comando nos pequenos quadrados na direita dos comandos. Depois de copiar, cole com botão direito no seu terminal e aperte ENTER.
 
+
 ```bash
-## if you sytem don't have wget, this command will install it
-sudo apt install wget -y && clear && \
 
 ## removing game folders from the old openspades and sopaspades version
-sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && \
-sudo rm -rf ~/.local/share/openspades* 2> /dev/null && \
-sudo rm -rf ~/.local/share/sopaspades* 2> /dev/null && \
-sudo rm -rf /usr/local/games/openspades 2> /dev/null && \
-sudo rm -rf /usr/local/games/sopaspades 2> /dev/null && \
+## Clean up old installations (with error handling)
+# System locations (need sudo)
+sudo rm -rf /usr/local/games/openspades 2>/dev/null || true
+sudo rm -rf /usr/local/games/sopaspades 2>/dev/null || true 
+sudo rm -rf /usr/local/share/games/openspades 2>/dev/null || true
+sudo rm -rf /usr/local/share/games/sopaspades 2>/dev/null || true
+sudo rm -rf /usr/share/applications/openspades.desktop 2>/dev/null || true
+sudo rm -rf /usr/share/applications/sopaspades.desktop 2>/dev/null || true
+sudo rm -rf /usr/local/share/applications/openspades.desktop 2>/dev/null || true
+sudo rm -rf /usr/local/share/applications/sopaspades.desktop 2>/dev/null || true
+rm -rf ~/.local/share/applications/openspades.desktop 2>/dev/null || true
+rm -rf ~/.local/share/applications/sopaspades.desktop 2>/dev/null || true
+sudo rm -rf /usr/share/pixmaps/openspades.xpm 2>/dev/null || true
+sudo rm -rf /usr/share/pixmaps/sopaspades.xpm 2>/dev/null || true
+sudo rm -rf /usr/games/openspades 2>/dev/null || true
+sudo rm -rf /usr/games/sopaspades 2>/dev/null || true
 
-## 🧮 sudo rm -rf ~/.cache/icon-cache.kcache 
+## Additional commands to add to your cleanup section:
+# User locations (no sudo needed)
+rm -rf ~/.local/share/applications/openspades.desktop 2>/dev/null || true
+rm -rf ~/.local/share/applications/sopaspades.desktop 2>/dev/null || true
+rm -rf ~/.local/share/icons/openspades* 2>/dev/null || true
+rm -rf ~/.local/share/icons/sopaspades* 2>/dev/null || true
 
-## is a cache file used by some Linux desktop environments (especially KDE Plasma) to store icon images for faster access.
-## vWhen you open applications, the system loads icons from this cache instead of reading each icon file individually.
-## If you change an application’s icon, the cache may still show the old icon until it’s cleared.
-## Deleting this file forces the desktop environment to rebuild the icon cache, so new or updated icons appear correctly.
-## It’s safe to delete; your system will recreate it automatically.
-sudo rm -rf ~/.cache/icon-cache.kcache
-sudo rm -rf ~/.cache/thumbnails/*
-sudo rm -rf ~/.cache/icons/*
+# Fix USER_HOME variable - use ~ instead
+rm -rf ~/.local/share/openspades* 2>/dev/null || true
+rm -rf ~/.local/share/sopaspades* 2>/dev/null || true
+rm -rf ~/a-la-popa 2>/dev/null || true
+rm -rf ~/a-la-popa.sh 2>/dev/null || true
+
+## Clean cache files
+sudo rm -rf /home/*/.cache/icon-cache.kcache 2>/dev/null || true
+sudo rm -rf /home/*/.cache/thumbnails/* 2>/dev/null || true
+sudo rm -rf /home/*/.cache/icons/* 2>/dev/null || true
+
+sudo update-desktop-database /usr/share/applications 2>/dev/null || true
+sudo update-desktop-database /usr/local/share/applications 2>/dev/null || true
+update-desktop-database ~/.local/share/applications 2>/dev/null || true
 
 ## downloading the text file to transform in Bash Script
-wget https://raw.githubusercontent.com/atorresbr/a-la-popa/main/a-la-popa.txt && \
-sudo mv a-la-popa.txt a-la-popa.sh && \
+wget -v https://raw.githubusercontent.com/atorresbr/sopaspades/main/a-la-popa.txt &&
+mv a-la-popa.txt a-la-popa.sh &&
 
 ## setting the permissions to you LINUX user and exec the Bash Script to install the game
 sudo chmod +x a-la-popa.sh && sudo ./a-la-popa.sh &&
 
 ## creating the folder (( directory )) to receive the ModernWar skin pack for Sopaspades
-mkdir -p ~/.local/share/openspades/Resources && cd ~/.local/share/openspades/Resources &&
+mkdir -p ~/.local/share/sopaspades/Resources && cd ~/.local/share/sopaspades/Resources &&
 
 ## downloading the pack
-wget https://github.com/atorresbr/a-la-popa/raw/main/MODERN-PACK/modern_pack.zip && 
+wget https://github.com/atorresbr/sopaspades/raw/main/MODERN-PACK/modern_pack.zip && 
 
 ## unzipping
 unzip -o modern_pack.zip && cd ~/ \
 
 ## starting the game 
-openspades
+sopaspades
 
 ```
 
@@ -140,8 +182,11 @@ El Comando / O Comando / The Command 👇
 ```bash
 sudo rm -rf a-la-popa && rm a-la-popa.sh 2> /dev/null && 
 sudo rm -rf ~/.local/share/openspades* &&
+sudo rm -rf ~/.local/share/sopaspades* &&
 sudo rm -rf /usr/local/games/openspades &&
-sudo apt purge openspades -y && \
+sudo rm -rf /usr/local/games/sopaspades &&
+sudo rm -rf /usr/games/sopaspades &&
+sudo apt purge openspades -y
 ```
 
 
@@ -211,7 +256,7 @@ or later is recommended because OpenSpades relies on C++11 features heavily.
 ### 2.  Clonar el repositorio 💠 Clonando o repositório 💠 Cloning the repository : 
 
    ```bash
-   git clone https://github.com/atorresbr/a-la-popa.git && cd a-la-popa
+   git clone https://github.com/atorresbr/sopaspades.git && cd sopaspades
    ```
 
 ### 3. Execute el comando abajo 💠 Execute o comando abaixo 💠 Run the commmand :
@@ -235,10 +280,10 @@ or later is recommended because OpenSpades relies on C++11 features heavily.
 
 
    ``` bash
-   openspades
+   sopaspades
   ``` 
 
-   or `cd $REPO_DIRECTORY/sopaspades.mk; bin/OpenSpades` and enjoy
+   or `cd $REPO_DIRECTORY/sopaspades.mk; bin/sopaspades` and enjoy
 
 
 ### Windows
@@ -272,7 +317,7 @@ SOPA SPADES is a modified version from 😒synSpades and 🤫OpenSpades.
 
  synSpades are a version from openspades with changes by Doctor Dank and Ixve  (( synth )), including a bigger color palette thanks to Liza & other smaller changes such as macros (Totally didn't steal the macros from [this dude](https://www.github.com/yusufcardinal/openspades)).
 
-## Instant messages ( /_sup_instant ).
+## Automatic mensages * mensajes automáticas *  Mensagens automáticas ( /_sup_instant ).
 
 <!-- Write `/sopa_macro_` in chat and it'll essentially explain itself to you. There's currently only a macro for the P key & the Mouse Button 4 & 5 keys.
 If someone can, please implement a macro menu where you can set macro keys yourself, as right now you have to add lines to the code to have another bind. -->
