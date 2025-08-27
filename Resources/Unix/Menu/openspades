@@ -1,0 +1,2 @@
+?package(sopaspades):needs="X11" section="Games/Action"\
+  title="SopaSpades" command="/usr/games/sopaspades" icon="/usr/share/pixmaps/sopaspades.xpm"
