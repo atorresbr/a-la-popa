@@ -73,7 +73,7 @@ if(UNIX AND NOT APPLE)
 		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Unix/Debian
 	)
 	add_custom_command(
-		TARGET SopaSpades_Unix
+		TARGET Op_Unix
 		COMMAND sh -c \"gzip -9 -c ${CMAKE_CURRENT_BINARY_DIR}/Unix/Man/sopaspades.6 > sopaspades.6.gz\"
 		WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/Unix/Man
 	)
